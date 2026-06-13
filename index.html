@@ -3,212 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>InkPlay Foundation </title>
-  <meta name="description" content="InkPlay Foundation helps organisations plan better, perform better, and deliver better through strategy, evidence, learning, and stakeholder engagement." />
-  <style>
-    :root{
-      --green:#0f4f41;
-      --green-2:#0b3f34;
-      --green-3:#0a352d;
-      --cream:#fbf6ee;
-      --cream-2:#f6efe5;
-      --rust:#c9692e;
-      --rust-2:#b85a26;
-      --ink:#1e2724;
-      --muted:#6d756f;
-      --card:#ffffff;
-      --line:rgba(15,79,65,.13);
-      --shadow:0 18px 45px rgba(14, 50, 42, .13);
-      --radius:24px;
-      --max:1160px;
-    }
-     html{
-    font-size:14px;
-  }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), calc(100% - 40px));margin-inline:auto}
-    .eyebrow{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--rust);font-family:Georgia, serif;font-weight:700;font-size:15px;margin:0 0 10px}
-    .eyebrow:before{content:"";width:34px;height:2px;background:var(--rust);border-radius:2px}
-    .section-title{font-family:Georgia, serif;font-size:clamp(30px,4vw,46px);line-height:1.12;margin:0;color:var(--green-2)}
-    .section-lead{max-width:760px;margin:14px auto 0;color:var(--muted);font-size:17px}
-    .center{text-align:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--rust);color:#fff;border-radius:10px;padding:13px 20px;font-weight:700;font-size:14px;box-shadow:0 8px 18px rgba(201,105,46,.24);transition:.2s ease}
-    .btn:hover{background:var(--rust-2);transform:translateY(-1px)}
-    .btn.secondary{background:transparent;color:var(--green);border:1px solid rgba(15,79,65,.24);box-shadow:none}
-    .site-header{position:sticky;top:0;z-index:20;background:rgba(251,246,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(15,79,65,.10)}
-    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:10px;min-width:210px}.brand img{width:176px;height:54px;object-fit:contain;border-radius:10px;background:var(--green);padding:5px 8px;box-shadow:0 6px 16px rgba(15,79,65,.10)}
-    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650;color:#33433d}.nav-links a{position:relative}.nav-links a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:2px;background:var(--rust);transition:.2s ease}.nav-links a:hover:after{width:100%}
-    .nav .btn{padding:10px 15px;border-radius:8px}.mobile-menu{display:none}
-    .hero{background:linear-gradient(135deg,var(--green) 0%,#0d4a3e 58%,#0b3a31 100%);color:#fff;padding:82px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:auto -10% -35% auto;width:480px;height:480px;background:radial-gradient(circle,rgba(201,105,46,.21),transparent 65%);border-radius:50%}.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}.hero-kicker{color:#e7b28b;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;margin-bottom:16px}.hero h1{font-family:Georgia, serif;font-size:clamp(42px,5vw,66px);line-height:1.03;margin:0 0 22px;max-width:650px}.hero h1 em{color:#e3a06e;font-style:italic}.hero p{font-size:18px;color:#e7eee9;max-width:620px;margin:0 0 28px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.hero-card{position:relative}.hero-card img{border-radius:26px;box-shadow:0 25px 70px rgba(0,0,0,.25);aspect-ratio:16/10;object-fit:cover}.promise{position:absolute;left:-36px;bottom:28px;background:#fff;color:var(--ink);padding:18px 18px;border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.16);max-width:290px}.promise strong{display:block;color:var(--green);font-family:Georgia,serif}.promise span{display:block;font-size:13px;color:var(--muted);margin-top:4px}.strip{height:32px;background:var(--green);margin-top:0}
-    section{padding:92px 0}.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:1fr .98fr;gap:62px;align-items:center}.about-copy p{margin:16px 0;color:#4c5853}.about-image{background:#fff;padding:14px;border-radius:28px;box-shadow:var(--shadow)}.about-image img{border-radius:20px;aspect-ratio:4/3;object-fit:cover}.specialise{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}.pill{padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:650;color:var(--green)}
-    .value{background:#fff8f0}.value-grid{margin-top:42px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 10px 25px rgba(15,79,65,.06)}.num{width:38px;height:38px;border-radius:12px;background:#f6dfcf;color:var(--rust);display:grid;place-items:center;font-weight:800}.step h3{font-family:Georgia,serif;color:var(--green);font-size:24px;margin:18px 0 8px}.step p{color:var(--muted);margin:0}
-    .services{background:var(--green);color:#fff}.services .section-title{color:#fff}.services .section-lead{color:#d8e5de}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}.service-card{background:#fff;color:var(--ink);border-radius:16px;padding:24px;min-height:196px;box-shadow:0 18px 34px rgba(0,0,0,.12);display:flex;flex-direction:column}.icon{width:36px;height:36px;border-radius:12px;background:#f6dfcf;color:var(--rust);display:grid;place-items:center;font-weight:800;font-size:13px}.service-card h3{font-family:Georgia,serif;color:var(--green);font-size:20px;line-height:1.2;margin:20px 0 10px}.service-card p{color:#65706b;font-size:14px;margin:0}.cta-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:24px;display:flex;flex-direction:column;justify-content:center}.cta-card h3{font-family:Georgia,serif;font-size:24px;margin:0 0 8px}.cta-card p{color:#d8e5de;margin:0 0 18px}
-    .sectors{background:var(--cream)}.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}.sector{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(15,79,65,.04)}.sector h3{font-family:Georgia,serif;color:var(--green);font-size:20px;margin:16px 0 9px}.sector p{margin:0;color:var(--muted);font-size:14px}
-    .why{background:var(--green);color:#fff}.why .section-title{color:#fff}.why .section-lead{color:#d8e5de}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}.why-card{background:#fff;color:var(--ink);border-radius:18px;padding:26px;box-shadow:0 18px 34px rgba(0,0,0,.12)}.why-card h3{font-family:Georgia,serif;color:var(--green);font-size:22px;margin:16px 0 8px}.why-card p{color:var(--muted);font-size:14px;margin:0}
-    .experts{background:#fff8f0}.expert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:46px}.expert{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 12px 28px rgba(15,79,65,.08);text-align:center;display:flex;flex-direction:column;height:100%}.expert-photo{height:260px;background:#eef4f1;overflow:hidden}.expert img{width:100%;height:100%;object-fit:cover;object-position:center top}.expert-body{padding:20px 16px 22px;display:flex;flex-direction:column;align-items:center;flex:1}.expert h3{font-family:Georgia,serif;color:var(--green);font-size:19px;line-height:1.2;margin:0 0 7px}.expert .role{font-weight:800;color:var(--rust);font-size:13px;margin-bottom:4px}.expert p{font-size:13px;color:var(--muted);margin:0;line-height:1.45}.expert:hover{transform:translateY(-3px);transition:.2s ease;box-shadow:0 18px 36px rgba(15,79,65,.13)}
-    .contact{background:var(--green);color:#fff;padding-bottom:0}.contact .section-title{color:#fff}.contact .section-lead{color:#d8e5de}.contact-panel{margin-top:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.contact-card{background:#fff;color:var(--ink);border-radius:18px;padding:24px}.contact-card h3{font-family:Georgia,serif;color:var(--green);margin:0 0 14px}.contact-list{list-style:none;margin:0;padding:0}.contact-list li{padding:9px 0;border-bottom:1px solid var(--line)}.contact-list li:last-child{border-bottom:0}.address-grid{display:grid;gap:12px}.address-box{padding:16px;border:1px solid var(--line);border-radius:14px;background:#fff}.address-box strong{color:var(--green);display:block;margin-bottom:4px}.address-box span{color:var(--muted)}
-    footer{background:var(--green-3);color:#cbd8d2;padding:46px 0}.footer-grid{display:grid;grid-template-columns:1.2fr .7fr 1fr .8fr;gap:34px}.footer-grid h4{color:#fff;font-family:Georgia,serif;margin:0 0 14px}.footer-grid p,.footer-grid a{font-size:14px;color:#cbd8d2;margin:0 0 8px;display:block}.copyright{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#a9bab2;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media (max-width:1000px){.hero-grid,.about-grid,.contact-panel{grid-template-columns:1fr}.service-grid{grid-template-columns:repeat(2,1fr)}.sector-grid,.why-grid{grid-template-columns:repeat(2,1fr)}.expert-grid{grid-template-columns:repeat(3,1fr)}.expert-photo{height:280px}.promise{left:18px}.nav-links{display:none}.mobile-menu{display:block;color:var(--green);font-weight:800}.footer-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.container{width:min(100% - 28px,var(--max))}.hero{padding:54px 0}.hero-actions{flex-direction:column;align-items:stretch}.service-grid,.sector-grid,.why-grid,.expert-grid,.value-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.nav{height:68px}.brand img{width:142px;height:44px}.expert-photo{height:360px}.promise{position:relative;left:auto;bottom:auto;margin:-24px 14px 0}.contact-panel{padding:18px}section{padding:64px 0}.strip{height:20px}}
-  </style>
+  <title>InkPlay Foundation | Strategic Advisory & Knowledge Partner</title>
+  <meta name="description" content="InkPlay Foundation helps organisations plan better, perform better, and deliver better through strategy, evidence, learning, stakeholder engagement and development advisory services." />
+  <meta name="theme-color" content="#0B1220" />
+  <meta property="og:title" content="InkPlay Foundation" />
+  <meta property="og:description" content="A strategic advisory and knowledge partner for governments, development agencies, foundations and purpose-driven organisations." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="InkPlay Foundation home"><img src="assets/inkplay-logo.png" alt="InkPlay Foundation" /></a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#sectors">Sectors</a>
-        <a href="#why">Why Choose Us</a>
-        <a href="#experts">Meet Our Experts</a>
-      </nav>
-      <a class="btn" href="#contact">Contact Us</a>
-      <div class="mobile-menu" aria-hidden="true">Menu</div>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="InkPlay Foundation home">
+        <span class="brand-mark">IPF</span>
+        <span class="brand-text">InkPlay Foundation</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#why-us">Why Choose Us</a></li>
+        <li><a href="#experts">Experts</a></li>
+        <li><a class="nav-cta" href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section class="hero section">
       <div class="container hero-grid">
-        <div>
-          <div class="hero-kicker">Strategic Advisory & Knowledge Partner</div>
-          <h1 id="hero-title">We help organisations <em>plan better, perform better,</em> and deliver better.</h1>
-          <p>A strategic advisory and knowledge partner to governments, development agencies, foundations, and purpose-driven organisations — providing the thinking, structure, and insights behind better decisions.</p>
+        <div class="hero-copy">
+          <p class="eyebrow">Strategic advisory & knowledge partner</p>
+          <h1>We help organisations plan better, perform better, and deliver better.</h1>
+          <p class="hero-lead">A thinking partner to governments, development agencies, foundations, private sector organisations and civil society institutions — providing the thinking, structure and insights behind better decisions.</p>
           <div class="hero-actions">
-            <a class="btn" href="#contact">Get in touch →</a>
-            <a class="btn secondary" href="#services">Explore services</a>
+            <a class="button button-primary" href="#contact">Get in touch</a>
+            <a class="button button-secondary" href="#services">Explore services</a>
           </div>
         </div>
-        <div class="hero-card">
-          <img src="assets/hero-planning.jpg" alt="Planning table with strategic documents, charts, and notes" />
-          <div class="promise"><strong>Our Promise</strong><span>Helping organisations navigate complexity with clarity and confidence.</span></div>
-        </div>
-      </div>
-    </section>
-    <div class="strip"></div>
-
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p class="eyebrow" style="justify-content:flex-start">About Us</p>
-          <h2 class="section-title" id="about-title">A thinking partner for complex change</h2>
-          <p>InkPlay Foundation helps organisations navigate complex development and sustainability challenges through strategy, evidence, learning, and stakeholder engagement.</p>
-          <p>As a strategic advisory and knowledge partner, we work with governments, development agencies, foundations, private sector organisations, and civil society institutions to strengthen systems, improve decision-making, and achieve meaningful outcomes.</p>
-          <p>By combining analytical thinking, technical expertise, and practical experience, we help organisations translate ambition into action and evidence into impact.</p>
-          <div class="specialise" aria-label="Areas of specialisation">
-            <span class="pill">Project Design</span><span class="pill">Monitoring & Evaluation</span><span class="pill">Reports & Knowledge</span><span class="pill">Stakeholder Communication</span><span class="pill">Workshops & Consultation</span>
+        <div class="hero-panel" aria-label="InkPlay Foundation promise">
+          <div class="promise-card">
+            <span class="promise-label">Our promise</span>
+            <h2>Helping organisations navigate complexity with clarity and confidence.</h2>
+          </div>
+          <div class="metric-strip" aria-label="Core strengths">
+            <div><strong>Strategy</strong><span>Programme design</span></div>
+            <div><strong>Evidence</strong><span>Research & learning</span></div>
+            <div><strong>Impact</strong><span>Measurable outcomes</span></div>
           </div>
         </div>
-        <div class="about-image"><img src="assets/about-ecosystem.jpg" alt="InkPlay Foundation ecosystem graphic showing development sectors and methods" /></div>
       </div>
     </section>
 
-    <section class="value" aria-labelledby="value-title">
-      <div class="container center">
-        <p class="eyebrow">How We Create Value</p>
-        <h2 class="section-title" id="value-title">From ideas to measurable results</h2>
-        <p class="section-lead">Every engagement follows a clear path — we bring the thinking and structure at each step.</p>
-        <div class="value-grid">
-          <article class="step"><div class="num">1</div><h3>Ideas & Ambition</h3><p>We frame the real challenge and define what success looks like.</p></article>
-          <article class="step"><div class="num">2</div><h3>Informed Decisions</h3><p>Strategy, design, and evidence that turn ambition into a sound plan.</p></article>
-          <article class="step"><div class="num">3</div><h3>Measurable Results</h3><p>Monitoring, learning, and knowledge that prove and sustain impact.</p></article>
+    <section class="section about" id="about">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2>A thinking partner for complex change</h2>
+        </div>
+        <div class="content-stack">
+          <p>InkPlay Foundation helps organisations navigate complex development and sustainability challenges through strategy, evidence, learning and stakeholder engagement.</p>
+          <p>We work with governments, development agencies, foundations, private sector organisations and civil society institutions to strengthen systems, improve decision-making and achieve meaningful outcomes.</p>
+          <p>By combining analytical thinking, technical expertise and practical experience, we help organisations translate ambition into action and evidence into impact.</p>
         </div>
       </div>
     </section>
 
-    <section class="services" id="services" aria-labelledby="services-title">
-      <div class="container center">
-        <p class="eyebrow">Services</p>
-        <h2 class="section-title" id="services-title">Connected services that take an organisation from the first question to lasting impact.</h2>
-        <p class="section-lead">Strategic, evidence-led, and designed for practical implementation across the project lifecycle.</p>
-        <div class="service-grid">
-          <article class="service-card"><div class="icon">01</div><h3>Project Design & Strategy</h3><p>Roadmaps, frameworks, and programme designs that turn ambition into action.</p></article>
-          <article class="service-card"><div class="icon">02</div><h3>Proposal & Concept Note Development</h3><p>Purpose-fit proposals, concept notes, and partnership documents.</p></article>
-          <article class="service-card"><div class="icon">03</div><h3>Reports & Knowledge Products</h3><p>Research, policy briefs, reports, and knowledge products that outlast a project cycle.</p></article>
-          <article class="service-card"><div class="icon">04</div><h3>Impact Assessment & Evaluation</h3><p>Outcome assessments, project evaluation, and field-level evidence.</p></article>
-          <article class="service-card"><div class="icon">05</div><h3>Monitoring, Evaluation & Learning</h3><p>Monitoring systems, indicators, and learning frameworks that sharpen decisions.</p></article>
-          <article class="service-card"><div class="icon">06</div><h3>Communication, Media & Stakeholder Engagement</h3><p>Communication strategy, visibility, media, and stakeholder engagement.</p></article>
-          <article class="service-card"><div class="icon">07</div><h3>Workshop & Consultation Design</h3><p>Consultations, workshops, roundtables, and facilitation design.</p></article>
-          <aside class="cta-card"><h3>Need help scoping it?</h3><p>Tell us the decision you are facing.</p><a class="btn" href="#contact">Talk to us →</a></aside>
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Services</p>
+          <h2>Connected services that take an organisation from the first question to lasting impact.</h2>
+        </div>
+        <div class="card-grid services-grid">
+          <article class="service-card"><span>01</span><h3>Project Design & Strategy</h3><p>Roadmaps, frameworks and implementation strategies.</p></article>
+          <article class="service-card"><span>02</span><h3>Proposal & Concept Note Development</h3><p>Proposals, concept notes and partnership documents.</p></article>
+          <article class="service-card"><span>03</span><h3>Research, Reports & Knowledge Products</h3><p>Research, policy briefs, reports and knowledge products.</p></article>
+          <article class="service-card"><span>04</span><h3>Impact Assessment & Evaluation</h3><p>Outcome assessments, impact evaluations and independent reviews.</p></article>
+          <article class="service-card"><span>05</span><h3>Monitoring, Evaluation & Learning</h3><p>Monitoring systems, indicators and learning frameworks.</p></article>
+          <article class="service-card"><span>06</span><h3>Communications, Media & Stakeholder Engagement</h3><p>Communication, outreach, visibility and stakeholder engagement.</p></article>
+          <article class="service-card"><span>07</span><h3>Workshops & Consultation Design</h3><p>Consultations, roundtables, workshops and facilitation.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="sectors" id="sectors" aria-labelledby="sectors-title">
-      <div class="container center">
-        <p class="eyebrow">Sector Expertise</p>
-        <h2 class="section-title" id="sectors-title">Where our knowledge runs deep</h2>
-        <p class="section-lead">Applying strategy, evidence, and learning across key development and sustainability sectors.</p>
+    <section class="section sectors" id="sectors">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Sector expertise</p>
+          <h2>Where our knowledge runs deep</h2>
+          <p>Applying strategy, evidence and learning across key development and sustainability sectors.</p>
+        </div>
         <div class="sector-grid">
-          <article class="sector"><div class="icon">01</div><h3>Governance & Public Policy</h3><p>Strengthening institutions, policies, and systems that deliver public outcomes.</p></article>
-          <article class="sector"><div class="icon">02</div><h3>Climate & Sustainability</h3><p>Building resilience and sustainability ecosystems and strategies.</p></article>
-          <article class="sector"><div class="icon">03</div><h3>Urban Development & Circular Economy</h3><p>Creating resource-smart, inclusive, and resilient urban systems.</p></article>
-          <article class="sector"><div class="icon">04</div><h3>Inclusive Development</h3><p>Advancing equity, social inclusion, and opportunities for vulnerable communities.</p></article>
-          <article class="sector"><div class="icon">05</div><h3>Health & WASH</h3><p>Improving health, water, sanitation, and hygiene outcomes.</p></article>
-          <article class="sector"><div class="icon">06</div><h3>Community Development</h3><p>Supporting community-led solutions and sustainable local development.</p></article>
+          <article><h3>Governance & Public Policy</h3><p>Strengthening institutions, policies and systems that deliver.</p></article>
+          <article><h3>Climate & Sustainability</h3><p>Building resilience and supporting sustainable development.</p></article>
+          <article><h3>Urban Development & Circular Economy</h3><p>Creating more inclusive, resource-efficient and resilient cities.</p></article>
+          <article><h3>Inclusive Development</h3><p>Advancing equity, social inclusion and opportunities for vulnerable communities.</p></article>
+          <article><h3>Health & WASH</h3><p>Improving health, water, sanitation and hygiene outcomes.</p></article>
+          <article><h3>Community Development</h3><p>Supporting community-led solutions and sustainable local development.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="why" id="why" aria-labelledby="why-title">
-      <div class="container center">
-        <p class="eyebrow">Why Choose Us</p>
-        <h2 class="section-title" id="why-title">What sets us apart</h2>
-        <p class="section-lead">A strategic advisory and knowledge partner built on systems thinking, evidence, and continuous learning.</p>
+    <section class="section why-us" id="why-us">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why choose us</p>
+          <h2>A strategic advisory and knowledge partner built on systems thinking, evidence and continuous learning.</h2>
+        </div>
         <div class="why-grid">
-          <article class="why-card"><div class="icon">01</div><h3>Systems Thinking</h3><p>We look beyond individual projects to understand systems, stakeholders, and incentives that shape outcomes.</p></article>
-          <article class="why-card"><div class="icon">02</div><h3>Evidence-led</h3><p>Research, data, and practical experience underpin every recommendation, strategy, and decision.</p></article>
-          <article class="why-card"><div class="icon">03</div><h3>Learning & Adaptation</h3><p>We help organisations generate insights, capture lessons, and continuously improve through reflection and evidence.</p></article>
-          <article class="why-card"><div class="icon">04</div><h3>Integrated Perspective</h3><p>Strategy, research, M&E, communication, and stakeholder engagement brought together to address complex challenges holistically.</p></article>
-          <article class="why-card"><div class="icon">05</div><h3>Context-driven</h3><p>Every engagement is tailored to the realities, priorities, and operating environment of our partners.</p></article>
-          <article class="why-card"><div class="icon">06</div><h3>Impact-focused</h3><p>We help organisations move from ideas and intentions to measurable results and lasting change.</p></article>
+          <article><span>01</span><h3>Systems Thinking</h3><p>We look beyond individual projects to understand the systems, stakeholders and incentives that shape outcomes.</p></article>
+          <article><span>02</span><h3>Evidence-Led</h3><p>Research, data and practical experience underpin every recommendation, strategy and decision.</p></article>
+          <article><span>03</span><h3>Learning & Adaptation</h3><p>We help organisations generate insights, capture lessons and continuously improve through reflection and evidence.</p></article>
+          <article><span>04</span><h3>Integrated Perspective</h3><p>Strategy, research, MEL, communications and stakeholder engagement brought together to address complex challenges holistically.</p></article>
+          <article><span>05</span><h3>Context-Driven</h3><p>Every engagement is tailored to the realities, priorities and operating environment of our partners.</p></article>
+          <article><span>06</span><h3>Impact-Focused</h3><p>We help organisations move from ideas and intentions to measurable results and lasting change.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="experts" id="experts" aria-labelledby="experts-title">
-      <div class="container center">
-        <p class="eyebrow">Meet Our Experts</p>
-        <h2 class="section-title" id="experts-title">You work with experienced practitioners.</h2>
-        <p class="section-lead">Senior specialists supporting advisory, research, communications, partnerships, and programme strategy.</p>
+    <section class="section experts" id="experts">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Meet our experts</p>
+          <h2>You work with experienced practitioners.</h2>
+        </div>
         <div class="expert-grid">
-          <article class="expert"><div class="expert-photo"><img src="assets/expert-pravin-bhardwaj.jpg" alt="Pravin Bhardwaj" /></div><div class="expert-body"><h3>Pravin Bhardwaj</h3><div class="role">Partner</div><p>Urban Development, Climate and Sustainability</p></div></article>
-          <article class="expert"><div class="expert-photo"><img src="assets/expert-kissa-fatima.jpg" alt="Kissa Fatima" /></div><div class="expert-body"><h3>Kissa Fatima</h3><div class="role">Partner</div><p>Environmental Impact & Regulatory Compliance</p></div></article>
-          <article class="expert"><div class="expert-photo"><img src="assets/expert-james-lattouf.jpg" alt="James Lattouf" /></div><div class="expert-body"><h3>James Lattouf</h3><div class="role">Strategic Advisor</div><p>Media Strategy & Performance Marketing</p></div></article>
-          <article class="expert"><div class="expert-photo"><img src="assets/expert-lorena-heras.jpg" alt="Lorena Heras" /></div><div class="expert-body"><h3>Lorena Heras</h3><div class="role">Strategic Advisor</div><p>Partnerships, Business Development & Strategic Communications</p></div></article>
-          <article class="expert"><div class="expert-photo"><img src="assets/expert-bhawani-singh.jpg" alt="Bhawani Singh" /></div><div class="expert-body"><h3>Bhawani Singh</h3><div class="role">Strategic Advisor</div><p>Media Strategy & Communications</p></div></article>
+          <article class="expert-card"><div class="avatar">BS</div><h3>Bhawani Singh</h3><p>Head<br>Media & Strategy</p></article>
+          <article class="expert-card"><div class="avatar">JL</div><h3>James Lattouf</h3><p>Managing Director<br>Media Strategy & Performance Marketing</p></article>
+          <article class="expert-card"><div class="avatar">LH</div><h3>Lorena Heras</h3><p>Manager<br>Partnerships, Business Development & Communications</p></article>
+          <article class="expert-card"><div class="avatar">PB</div><h3>Pravin Bhardwaj</h3><p>Senior Advisor<br>Urban Development, Climate & Sustainability</p></article>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="container center">
-        <p class="eyebrow">Get In Touch</p>
-        <h2 class="section-title" id="contact-title">Let’s start a conversation</h2>
-        <p class="section-lead">Whether you’re shaping a strategy, strengthening evidence, designing a programme, or assessing impact, we’d be pleased to explore how InkPlay Foundation can support your work.</p>
-        <div class="contact-panel">
-          <div class="contact-card" style="text-align:left"><h3>Contact</h3><ul class="contact-list"><li><strong>Email:</strong> info.inkplay@gmail.com</li><li><strong>India:</strong> +91 99715 64207</li><li><strong>Australia:</strong> +61 42725 3068</li></ul></div>
-          <div class="contact-card" style="text-align:left"><h3>Address</h3><div class="address-grid"><div class="address-box"><strong>Delhi:</strong><span>C 8/93, East of Kailash, South Delhi - 110065</span></div><div class="address-box"><strong>Maharashtra:</strong><span>468, Vivekanand Colony, Thane</span></div></div></div>
-        </div>
-      </div>
-      <footer>
-        <div class="container">
-          <div class="footer-grid">
-            <div><h4>InkPlay Foundation</h4><p>Strategic Advisory & Knowledge Partner. We help organisations plan better, perform better, and deliver better.</p></div>
-            <div><h4>Explore</h4><a href="#about">About Us</a><a href="#services">Services</a><a href="#sectors">Sectors</a><a href="#why">Why Choose Us</a><a href="#experts">Meet Our Experts</a></div>
-            <div><h4>Services</h4><a href="#services">Project Design & Strategy</a><a href="#services">Proposal & Concept Note Development</a><a href="#services">Reports & Knowledge Products</a><a href="#services">Impact Assessment & Evaluation</a><a href="#services">Stakeholder Communication</a></div>
-            <div><h4>Contact</h4><a href="mailto:info.inkplay@gmail.com">info.inkplay@gmail.com</a><a href="tel:+919971564207">+91 99715 64207</a><p>Delhi: C 8/93, East of Kailash, South Delhi - 110065</p><p>Maharashtra: 468, Vivekanand Colony, Thane</p><a href="#">LinkedIn ↗</a></div>
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let’s start a conversation</h2>
+          <p>Whether you’re shaping a strategy, strengthening evidence, designing a programme, or assessing impact, we’d be pleased to explore how InkPlay Foundation can support your work.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:info.inkplay@gmail.com">Email us</a>
+            <a class="button button-secondary" href="tel:+919315754938">Call India</a>
           </div>
-          <div class="copyright"><span>© 2026 InkPlay Foundation. All rights reserved.</span><span>Privacy · Accessibility</span></div>
         </div>
-      </footer>
+        <aside class="contact-card">
+          <h3>Contact</h3>
+          <p><strong>Email</strong><br><a href="mailto:info.inkplay@gmail.com">info.inkplay@gmail.com</a></p>
+          <p><strong>India</strong><br><a href="tel:+919315754938">+91 93157 54938</a></p>
+          <p><strong>Australia</strong><br><a href="tel:+61472753994">+61 47275 3994</a></p>
+          <hr>
+          <p><strong>Address</strong><br>Delhi: C 231 East of Kailash, South Delhi - 110065</p>
+          <p>Maharashtra: 468, Vivekanand Colony, Thane</p>
+        </aside>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top"><span class="brand-mark">IPF</span><span class="brand-text">InkPlay Foundation</span></a>
+        <p>Strategic Advisory & Knowledge Partner. We help organisations plan better, perform better, and deliver better.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="#about">About Us</a>
+        <a href="#services">What We Do</a>
+        <a href="#sectors">Sectors</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#experts">Meet Our Experts</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Project Design & Strategy</a>
+        <a href="#services">Research & Knowledge Products</a>
+        <a href="#services">Impact Assessment & Evaluation</a>
+        <a href="#services">Monitoring, Evaluation & Learning</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:info.inkplay@gmail.com">info.inkplay@gmail.com</a>
+        <a href="tel:+919315754938">IN: +91 93157 54938</a>
+        <a href="tel:+61472753994">AU: +61 47275 3994</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 InkPlay Foundation. All rights reserved.</span>
+      <span>Privacy · Accessibility</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
